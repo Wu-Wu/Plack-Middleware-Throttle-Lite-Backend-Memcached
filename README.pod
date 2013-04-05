@@ -1,0 +1,31 @@
+=pod
+
+=head1 NAME
+
+Plack::Middleware::Throttle::Lite::Backend::Memcached - Memcache-driven storage backend for Throttle-Lite
+
+=head1 VERSION
+
+version 0.01
+
+=head1 DESCRIPTION
+
+=head1 SYNOPSYS
+
+=head1 METHODS/SUBROUTINES
+
+=head1 BUGS
+
+=head1 SEE ALSO
+
+=head1 AUTHOR
+
+Anton Gerasimov <chim@cpan.org>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Anton Gerasimov.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
