@@ -12,6 +12,19 @@ use Cache::Memcached::Fast;
 # VERSION
 # AUTHORITY
 
+__PACKAGE__->mk_attrs(qw(mc));
+
+sub init {
+    my ($self, $args) = @_;
+}
+
+sub increment {
+    my ($self) = @_;
+}
+
+sub reqs_done {
+    my ($self) = @_;
+}
 
 1; # End of Plack::Middleware::Throttle::Lite::Backend::Memcached
 
