@@ -42,12 +42,57 @@ __END__
 
 =head1 SYNOPSYS
 
+    # inside your app.psgi
+    enable 'Throttle::Lite',
+        backend => [
+            'Memcached' => {
+                servers => [
+                    'mc1.example.com:11211',
+                    'mc1.example.com:11212',
+                    'mc2.example.net:11210',
+                ],
+            }
+        ];
+
 =head1 DESCRIPTION
 
-=head1 METHODS/SUBROUTINES
+This is implemetation of the storage backend for B<Plack::Middleware::Throttle::Lite>. It uses memcache-server
+to hold throttling data, automatically sets expiration time for stored keys to save memory consumption.
+
+=head1 OPTIONS
+
+There are no backend-specific options. All options directly passing to downstream interface to memcached server.
+At the moment this is B<Cache::Memcached::Fast>. See L<Cache::Memcached::Fast> for available configuration options.
+
+=head1 METHODS
+
+=head2 mc
+
+Returns a memcached connection handle.
+
+=head2 init
+
+See L<Plack::Middleware::Throttle::Lite::Backend::Abstract/"ABSTRACT METHODS">
+
+=head2 reqs_done
+
+See L<Plack::Middleware::Throttle::Lite::Backend::Abstract/"ABSTRACT METHODS">
+
+=head2 increment
+
+See L<Plack::Middleware::Throttle::Lite::Backend::Abstract/"ABSTRACT METHODS">
 
 =head1 BUGS
 
+Please report any bugs or feature requests through the web interface at
+L<https://github.com/Wu-Wu/Plack-Middleware-Throttle-Lite-Backend-Memcached/issues>
+
 =head1 SEE ALSO
+
+L<Cache::Memcached::Fast>
+
+L<Plack::Middleware::Throttle::Lite>
+
+L<Plack::Middleware::Throttle::Lite::Backend::Abstract>
 
 =cut
