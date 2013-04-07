@@ -1,6 +1,8 @@
 Revision history for Perl extension Plack::Middleware::Throttle::Lite::Backend::Memcached
 
 {{$NEXT}}
+
+0.02    Sun Apr 7 13:37:23 2013 +0000
     - added simple usage example
 
 0.01    Sun Apr 7 13:12:59 2013 +0000
