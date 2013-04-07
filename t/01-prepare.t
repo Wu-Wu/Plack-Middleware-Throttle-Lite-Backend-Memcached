@@ -25,11 +25,12 @@ my $appx = sub {
 };
 
 my @failed = (
-    'bogus' => { servers => [ 'bogus.alpha:0', 'bogus.bravo:0', 'bogus.charlie:0' ] },
+    'bogus-servers' => { servers => [ 'bogus.alpha:0', 'bogus.bravo:0', 'bogus.charlie:0' ] },
+    'undef-servers' => { },
 );
 
 while (my ($set, $args) = splice(@failed, 0, 2)) {
-    throws_ok { $appx->($args) } qr/Cannot get memcached handle.*/, 'Caught exception on args-set [' . $set . ']';
+    throws_ok { $appx->($args) } qr/Cannot get memcached handle/, 'Caught exception on args-set [' . $set . ']';
 }
 
 done_testing();
