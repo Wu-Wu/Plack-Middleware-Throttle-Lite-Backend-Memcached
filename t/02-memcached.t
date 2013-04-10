@@ -11,6 +11,9 @@ my $default_server = $ENV{MEMCACHED_SERVER} || '127.0.0.1:11211';
 my $mc = Cache::Memcached::Fast->new({ servers => [ $default_server ] });
 plan skip_all => "Memcached-server needs to be running on '$default_server' for tests" unless keys %{ $mc->server_versions };
 
+# wipe out all cached items before testing
+$mc->flush_all;
+
 # simple application
 my $app = sub { [200, [ 'Content-Type' => 'text/html' ], [ '<html><body>OK</body></html>' ]] };
 
